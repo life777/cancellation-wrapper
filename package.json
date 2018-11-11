@@ -2,9 +2,9 @@
   "name": "cancellation-wrapper",
   "version": "1.0.0",
   "description": "Wraps your api methods and functions and make possible to pass a cancellation token for promises",
-  "main": "./src/wrapper.js",
+  "main": "./dist/wrapper.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha test",
     "build": "./node_modules/.bin/babel src --out-dir dist"
   },
   "repository": {
@@ -12,7 +12,9 @@
     "url": "git+https://github.com/life777/cancellation-wrapper.git"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   },
   "keywords": [
     "cancellation",
@@ -24,8 +26,13 @@
     "url": "https://github.com/life777/cancellation-wrapper/issues"
   },
   "homepage": "https://github.com/life777/cancellation-wrapper#readme",
+  "files": [
+    "dist",
+    "test"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "mocha": "^5.2.0"
   }
 }
