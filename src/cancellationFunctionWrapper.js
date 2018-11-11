@@ -5,11 +5,11 @@ const isPromiseLike = p => p
                         && typeof p.then === "function"
                         && typeof p.catch === "function";
 
-const wrapFn = fn => (...rest) => {
+const wrapFn = (fn, ctx = null) => (...rest) => {
     let last = rest[rest.length - 1];
     if (last instanceof CancellationToken) {
         let token = rest.pop();
-        let result = fn.apply(null, rest);
+        let result = fn.apply(ctx, rest);
 
         if (isPromiseLike(result)) {
             return result.then(r => {
@@ -24,7 +24,7 @@ const wrapFn = fn => (...rest) => {
         return result;
     }
 
-    return fn.apply(null, rest);
+    return fn.apply(ctx, rest);
 };
 
 export { wrapFn };
