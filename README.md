@@ -53,3 +53,15 @@ const result = cancellableYourApi.multiply(1, 2, token).catch(
 // in a few moments you need to abort your action
 token.cancel();
 ```
+
+For Node.js you can use npm package. You should install it:
+
+```
+    npm i cancellation-wrapper
+```
+
+and import it in your file:
+
+```js
+const { wrapFn, CancellationToken } = require("wrapper");
+```
