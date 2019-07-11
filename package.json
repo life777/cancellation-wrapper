@@ -1,6 +1,6 @@
 {
   "name": "cancellation-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wraps your api methods and functions and make possible to pass a cancellation token for promises",
   "main": "./dist/wrapper.js",
   "scripts": {
@@ -33,6 +33,6 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "mocha": "^5.2.0"
+    "mocha": "^6.1.4"
   }
 }
