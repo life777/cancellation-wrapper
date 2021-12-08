@@ -1,11 +1,11 @@
-import { CancellationError } from "./cancellationError";
-import { CancellationToken } from "./cancellationToken";
+import { CancellationError } from "./cancellationError.js";
+import { CancellationToken } from "./cancellationToken.js";
 
 const isPromiseLike = p => p 
                         && typeof p.then === "function"
                         && typeof p.catch === "function";
 
-const wrapFn = (fn, ctx = null) => (...rest) => {
+export const wrapFn = (fn, ctx = null) => (...rest) => {
     let last = rest[rest.length - 1];
     if (last instanceof CancellationToken) {
         let token = rest.pop();
@@ -26,5 +26,3 @@ const wrapFn = (fn, ctx = null) => (...rest) => {
 
     return fn.apply(ctx, rest);
 };
-
-export { wrapFn };

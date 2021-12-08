@@ -1,5 +1,5 @@
-import { wrapFn } from "./cancellationFunctionWrapper";
-import { wrap } from "./cancellationMethodsWrapper";
-import { CancellationToken } from "./cancellationToken";
+import { wrapFn } from "./cancellationFunctionWrapper.js";
+import { wrap } from "./cancellationMethodsWrapper.js";
+import { CancellationToken } from "./cancellationToken.js";
 
 export { wrapFn, wrap, CancellationToken };

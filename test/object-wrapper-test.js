@@ -1,5 +1,5 @@
-const assert = require('assert');
-const { wrap, CancellationToken } = require('../dist/wrapper.js');
+import assert from 'assert';
+import { wrap, CancellationToken } from '../dist/wrapper.js';
 
 describe('Wrap Object', () => {
     const simpleApi = {

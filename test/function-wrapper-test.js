@@ -1,5 +1,5 @@
-const assert = require('assert');
-const { wrapFn, CancellationToken } = require('../dist/wrapper.js');
+import assert from 'assert';
+import { wrapFn, CancellationToken } from '../dist/wrapper.js';
 
 describe('Wrap function', () => {
     it('Wrap simple function', () => {

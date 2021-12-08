@@ -1,7 +1,7 @@
-import { wrapFn } from "./cancellationFunctionWrapper";
+import { wrapFn } from "./cancellationFunctionWrapper.js";
 
 /* wraps only methods of the object and won't wrap methods from prototype chain */
-const wrap = api => {
+export const wrap = api => {
     return Object.keys(api).reduce((akk, method) => {
         if (typeof akk[method] === "function") {
             akk[method] = wrapFn(akk[method], akk);
@@ -10,5 +10,3 @@ const wrap = api => {
         return akk;
     }, api);
 };
-
-export { wrap };
